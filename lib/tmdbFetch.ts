@@ -10,7 +10,10 @@ export const tmdbFetch = async (path: string) => {
         },
         next:{revalidate:60}
     })
-        .then(res => res.json())
+    if(!response.ok){
+        throw new Error(`TMDB error: ${response.status}`);
+    }
+
 
     return response;
 }

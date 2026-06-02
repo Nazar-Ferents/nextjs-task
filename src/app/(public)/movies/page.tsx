@@ -3,7 +3,7 @@ import {getMovies} from "@/src/app/services/movieServices";
 
 const MoviesPage = async () => {
 
-    const movies = await getMovies(3);
+    const movies = await getMovies(5);
     console.log(movies);
     return (
         <div>
