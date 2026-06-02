@@ -3,11 +3,12 @@ import {getMovies} from "@/src/app/services/movieServices";
 
 const MoviesPage = async () => {
 
-    const movies = await getMovies(1);
+    const movies = await getMovies(3);
+    console.log(movies);
     return (
         <div>
             {
-                movies.results.map(movie => (<div key={movie.id}>{movie.title}</div>))
+                movies.results.map((movie) => (<div key={movie.id}>{movie.title}</div>))
             }
         </div>
     );

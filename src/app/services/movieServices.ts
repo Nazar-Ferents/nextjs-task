@@ -9,6 +9,7 @@ export const getMovies = async(page:number):Promise<IMoviesGeneral> => {
     const movies:IMoviesGeneral = await fetch(`${baseURL}${endpoints.movies.allMovies(page)}`,{
         headers:{
             Authorization: `Bearer ${accessToken}`,
+            accept: 'application/json'
         },
         next:{revalidate:60}
     })
