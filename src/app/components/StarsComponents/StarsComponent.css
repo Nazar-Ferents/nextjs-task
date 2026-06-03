@@ -1,0 +1,15 @@
+.stars{
+    /*height: 10px;*/
+    display: flex;
+    gap: 4px;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.active {
+    color: gold;
+}
+
+.inactive {
+    color: #444;
+}

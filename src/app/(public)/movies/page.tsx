@@ -1,15 +1,12 @@
-import {getMovies} from "@/src/app/services/movieServices";
+import MoviesListComponent from "@/src/app/components/MovieComponents/MovieListComponets/MoviesListComponent/MoviesListComponent";
 
 
-const MoviesPage = async () => {
+const MoviesPage = () => {
 
-    const movies = await getMovies(5);
-    console.log(movies);
+
     return (
         <div>
-            {
-                movies.results.map((movie) => (<div key={movie.id}>{movie.title}</div>))
-            }
+            <MoviesListComponent/>
         </div>
     );
 };
