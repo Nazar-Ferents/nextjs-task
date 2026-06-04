@@ -23,7 +23,7 @@ const MovieListCardComponent:FC<PropsType> = ({movie,genres}) => {
             <Link href={`/movies/${movie.id}`}>
                 {
                     movie.poster_path ? (<img src={poster} alt="Movie's Poster"/>):
-                    (<div>I&#39;mPoster to film missingI&#39;m</div>)}
+                    (<div>&#39;Poster to film missing&#39;</div>)}
                 <h3>{movie.title}</h3>
                 <p>{movie.overview}</p>
                 <StarsComponent rating={movie.vote_average}/>

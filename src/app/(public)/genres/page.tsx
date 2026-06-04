@@ -1,8 +1,14 @@
+import {getGenres} from "@/src/app/services/genreService";
+import GenreListComponent from "@/src/app/components/GenreListComponents/GenreListComponent";
 
-const GenresPage = () => {
+const GenresPage = async() => {
+
+    const {genres} = await getGenres();
     return (
         <div>
-            GenresPage
+            {
+                genres.map((genre) => (<GenreListComponent key={genre.id} genre={genre}/>))
+            }
         </div>
     );
 };

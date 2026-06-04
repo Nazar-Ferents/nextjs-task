@@ -8,7 +8,7 @@ export const tmdbFetch = async (path: string) => {
         headers:{
             Authorization: `Bearer ${accessToken}`,
         },
-        next:{revalidate:0}
+        next:{revalidate:60}
     })
     if(!response.ok){
         throw new Error(`TMDB error: ${response.status}`);

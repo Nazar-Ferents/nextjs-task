@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SearchComponent from "@/src/app/components/SearchComponent/SearchComponent";
 
 const Header = () => {
     return (
@@ -8,6 +9,7 @@ const Header = () => {
                 <li><Link href={'/genres'}>Genres</Link></li>
                 <li><Link href={'/search'}>Search</Link></li>
             </ul>
+            <SearchComponent/>
         </header>
     );
 };
