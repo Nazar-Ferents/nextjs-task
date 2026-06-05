@@ -5,10 +5,13 @@ const GenresPage = async() => {
 
     const {genres} = await getGenres();
     return (
-        <div>
-            {
-                genres.map((genre) => (<GenreListComponent key={genre.id} genre={genre}/>))
-            }
+        <div className='main-container'>
+            <div className='moviesGrid'>
+                {
+                    genres.map((genre) => (<GenreListComponent key={genre.id} genre={genre}/>))
+                }
+            </div>
+
         </div>
     );
 };

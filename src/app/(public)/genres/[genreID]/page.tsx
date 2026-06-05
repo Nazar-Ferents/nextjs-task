@@ -14,9 +14,10 @@ const MoviesByGenresPage:FC<PropsType> = async ({params,searchParams}) => {
     const movies = await movieByGenresService({genreID,page})
 
     return (
-        <div>
-            <Pagination meta={movies} basePath={`/genres/${genreID}`}/>
+        <div className='main-container'>
             <MoviesListComponent data={movies}/>
+            <Pagination meta={movies} basePath={`/genres/${genreID}`}/>
+
         </div>
     );
 };

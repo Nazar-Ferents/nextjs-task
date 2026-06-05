@@ -1,0 +1,26 @@
+.badge {
+    display: inline-flex;
+    white-space: nowrap;
+    padding: 4px 8px;
+    border-radius: 12px;
+    background: #00bfff;
+    color: #040a10;
+    font-size: 14px;
+    margin: 0 5px 5px 0;
+    text-decoration: none;
+    transition: 0.2s;
+
+}
+
+.badge:hover {
+    background: rgba(0,191,255,0.2);
+    color: #fff;
+}
+
+
+
+.containerForBadges {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}

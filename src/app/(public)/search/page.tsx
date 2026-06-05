@@ -13,10 +13,12 @@ const SearchResultPage:FC<PropsType> = async ({searchParams}) => {
     const page = Number(params.page || 1)
 
     const movies = await searchMovie({title,page})
+    if (movies.results.length === 0) return <div>No Movies found</div>
     return (
-        <div>
-            <Pagination meta={movies} basePath={'/search'}/>
+        <div className='main-container'>
+
             <MoviesListComponent data={movies}/>
+            <Pagination meta={movies} basePath={'/search'}/>
         </div>
     );
 };

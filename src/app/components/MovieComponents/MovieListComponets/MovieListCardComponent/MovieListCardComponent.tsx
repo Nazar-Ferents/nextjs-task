@@ -6,6 +6,7 @@ import {IGenre} from "@/src/app/modules/genreModules/IGenres";
 import GenreBadgeComponent from "@/src/app/components/BadgeComponents/BadgeComponent";
 import Link from "next/link";
 import StarsComponent from "@/src/app/components/StarsComponents/StarsComponent";
+import './movieCard.css'
 
 
 type PropsType = {
@@ -19,19 +20,20 @@ const MovieListCardComponent:FC<PropsType> = ({movie,genres}) => {
 
 
     return (
-        <div>
-            <Link href={`/movies/${movie.id}`}>
+        <div className='wrapperCard'>
+            <Link href={`/movies/${movie.id}`} className='click-container movieCard'>
                 {
                     movie.poster_path ? (<img src={poster} alt="Movie's Poster"/>):
-                    (<div>&#39;Poster to film missing&#39;</div>)}
-                <h3>{movie.title}</h3>
-                <p>{movie.overview}</p>
+                    (<div className='missingPoster'>&#39;Poster to film missing&#39;</div>)}
+                <h3 className='movieCardTitle'>{movie.title}</h3>
+                <p className='movieCardOverview'>{movie.overview}</p>
                 <StarsComponent rating={movie.vote_average}/>
             </Link>
 
-                    <div>
-                        {movieGenres.map(movieGenre => (<GenreBadgeComponent genreID={movieGenre.id} name={movieGenre.name} key={movieGenre.id}/>))}
-                    </div>
+            <div className='containerForPadges badgeCard'>
+                {movieGenres.map(movieGenre =>
+                    (<GenreBadgeComponent genreID={movieGenre.id} name={movieGenre.name} key={movieGenre.id}/>))}
+            </div>
 
         </div>
     );

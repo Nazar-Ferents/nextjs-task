@@ -1,15 +1,16 @@
 import Link from "next/link";
 import SearchComponent from "@/src/app/components/SearchComponent/SearchComponent";
+import UserComponent from "@/src/app/components/UserComponents/UserComponent";
+import './header.css'
 
 const Header = () => {
     return (
-        <header>
-            <ul>
-                <li><Link href={'/movies'}>Movies</Link></li>
-                <li><Link href={'/genres'}>Genres</Link></li>
-                <li><Link href={'/search'}>Search</Link></li>
-            </ul>
+        <header className="header">
+            <Link href={'/movies'} className='link'>Movies List</Link>
+               <Link href={'/genres'} className='link'>Genres List</Link>
+
             <SearchComponent/>
+            <UserComponent/>
         </header>
     );
 };

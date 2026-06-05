@@ -2,6 +2,7 @@
 import {useRouter,useSearchParams} from "next/navigation";
 import {IMoviesGeneral} from "@/src/app/modules/movieModules/IMoviesGeneral";
 import {FC} from "react";
+import './paginationForMovies.css'
 
 type PropsType = {
     meta:IMoviesGeneral
@@ -21,7 +22,7 @@ const Pagination:FC<PropsType> = ({meta,basePath}) => {
 
     const totalPages = Math.min(Number(meta?.total_pages) || 1,500)
     return (
-        <div>
+        <div className="paginationForMovies">
             <button onClick={()=>{
 
                 if(currentPage > 1){

@@ -13,7 +13,7 @@ const MoviesListComponent:FC<PropsType> = async ({data}) => {
     const {genres} = await getGenres();
 
     return (
-        <div>
+        <div className='moviesGrid'>
             {
                 data.results.map((movie) => (<MovieListCardComponent key={movie.id} movie={movie} genres={genres} />))
             }

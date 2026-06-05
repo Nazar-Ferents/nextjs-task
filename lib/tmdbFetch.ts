@@ -1,4 +1,4 @@
-
+'use server'
 import {accessToken, baseURL} from "@/src/app/constants/constants";
 
 
