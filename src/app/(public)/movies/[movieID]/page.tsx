@@ -7,6 +7,7 @@ import './MovieDetailsPage.css'
 type PropsType = {
     params: Promise<{[key:string]:string | string[] | undefined}>
 }
+
 const MovieDetailsPage:FC<PropsType> = async ({params}) => {
 
     const movieID = Number((await params).movieID)
